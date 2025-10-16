@@ -292,7 +292,7 @@ TBA
 ## R
 
 ```{r}
-x1 <- c(1,2,3,NA)
+x1 <- c(11,22,33,NA)
 summary(x1)
 ```
 
@@ -313,11 +313,14 @@ mean(x1, na.rm = T)
 ```
 
 ```{r}
-na.omit(x1)
+wynik <- na.omit(x1)
+str(wynik, 1) # structure - wyswietla cala strukture
+attr(wynik, "na.action") 
 ```
 
 ```{r}
-x2 <- c(1,2,3, NA, NaN)
+x2 <- c(11, 22, 33, NA, NaN)
+x2
 ```
 
 ```{r}
@@ -335,6 +338,8 @@ table(x2, useNA = "ifany")
 
 ```{r}
 na.omit(x2)
+table(na.omit(x2), useNA = "always")
+table(x2, exclude = F)
 ```
 
 ## Python
@@ -379,7 +384,8 @@ x1.dropna()
 ## R
 
 ```{r}
-dane <- read.csv("../data/plik-przyklad.csv")
+dane <- read.csv("./data/plik-przyklad.csv",
+                 na.strings = c("NULL", "NA", "N/D", "Brak danych", "", "-"))
 head(dane)
 ```
 
@@ -392,7 +398,41 @@ Plik zawiera różne sposoby kodowania braków danych? Jakie? Jak to ustawić (h
 Co z korelacją? Jak wyznaczyć korelację między np. wiekiem, wzrostem i oceną gdy występują braki danych?
 
 ```{r, eval = FALSE}
-with(dane, cor(wzrost, ocena))
+with(dane, cor(wzrost, ocena, use="complete.obs"))
+```
+
+```{r}
+data <- read.csv("./data/exercise2.csv")
+head(data)
+```
+
+```{r}
+data$AttendanceRate <- as.numeric(data$AttendanceRate)
+typeof(data$AttendanceRate)
+```
+
+```{r}
+mean(data$AttendanceRate, na.rm = T)
+```
+
+```{r}
+data$MathScore <- as.numeric(data$MathScore)
+typeof(data$MathScore)
+```
+
+```{r}
+median(data$MathScore, na.rm = T)
+```
+
+```{r, eval = FALSE}
+with(data, cor(data$AttendanceRate, data$MathScore, use="complete.obs"))
+```
+
+```{r}
+data_NA <- read.csv("./data/exercise2.csv",
+                    na.strings = c("NULL", "NA", "-1", "-9"))
+head(data_NA)
+nrow(data_NA, na.rm=T)
 ```
 
 ## Python
