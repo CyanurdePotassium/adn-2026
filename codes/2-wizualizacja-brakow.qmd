@@ -19,6 +19,8 @@ library(VIM)
 library(naniar)
 library(panelView)
 library(ggplot2)
+library(data.table)
+library(tidyverse)
 ```
 
 ## Python
@@ -131,6 +133,27 @@ head(df_wide)
 
 ```{r}
 VIM::aggr(df_wide)
+```
+
+Przykład przejścia z danych long na wide (z `data.table`)
+
+```{r}
+df_long |>
+  subset(select=c(unit_id, year, y)) |>
+  setDT() |> 
+  dcast(unit_id ~ year, value.var = "y") |>
+  VIM::aggr(plot = F)  |>
+  summary()
+```
+
+Przykład przejścia z danych long na wide (z `tidyverse`)
+
+```{r}
+df_long |>
+  select(unit_id, year, y) |>
+  pivot_wider(names_from = year, values_from = y) |>
+  VIM::aggr(plot = F) |>
+  summary()
 ```
 
 ```{r}
