@@ -20,11 +20,12 @@
   + przydatne procedury:
     + R: `rnorm`, `plogis`, `density`, ...
     + Python: `np.random...`,  `gaussian_kde`, ...
-  + [kody do generowania braków danych](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2026/refs/heads/main/codes/1-problematyka-brakow-danych.html)
+  + [kody do generowania braków danych](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2026/refs/heads/main/codes/0-kody-do-slajdow.html)
 
 ### 2. Kodowanie braków danych w pakietatch statystycznych:
   + R: `NA`, `NA_integer_`, `NA_character_`, `is.na`, `Inf`, `NaN`
   + Python: `np.nan`, `pd.np.nan`, `pd.NA`, `pd.NaT`, `is.null`
+  + [kody na zajecia](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2026/refs/heads/main/codes/1-problematyka-brakow-danych.html)
   + Zbiory danych na potrzeby zajęć:
     + `csv`
     + `sav` -- [Bilans Kapitału Ludzkiego](https://www.parp.gov.pl/component/site/site/bilans-kapitalu-ludzkiego) -- [zbiór](), [kwestionariusz](https://www.parp.gov.pl/images/publications/BKL/Kwestionariusz_z_badania_ludnoci_BKL_edycja_2021_1.docx)
@@ -36,8 +37,7 @@
   + Kody generujące przykłady: [R](codes/script-01-gen-mechanisms.R), [Python](codes/script-01-gen-mechanisms.py)
   + Zbiory danych na zajęcia: [dane przekrojowe](data/data2-cross_sectional.csv), [dane panelowe (long)](data/data2-panel_long.csv), [dane panelowe (wide)](data/data2-panel_wide.csv)
   + Zbiór danych na ćwiczenia [data2-zajecia-przyklad1.csv](data/data2-zajecia-przyklad1.csv)
-  + Notatnik na zajęcia: [Wizualizacja braków danych](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2025/refs/heads/main/codes/2-wizualizacja-brakow.html)
-  + [Notatnik](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2025/refs/heads/main/codes/2-wizualizacja-brakow-zadanie.html) z rozwiązaniem zadania z zajęć.
+  + Notatnik na zajęcia: [Wizualizacja braków danych](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2026/refs/heads/main/codes/2-wizualizacja-brakow.html)
   
 ### 4. Imputacja danych
 
@@ -45,43 +45,49 @@
     + R: `zoo::na.locf`, `tidyr::fill`, `data.table::nafill`, `deducorrect`
     + Python: `fillna` z `pandas`
     + Zbiór danych na ćwiczenia [data3-zajecia-przyklad1.csv](data/data3-przyklad-imputacji.csv)
-    + [Notatnik](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2025/refs/heads/main/codes/3-imputacja-dedukcyjna.html)
+    + [Notatnik](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2026/refs/heads/main/codes/3-imputacja-dedukcyjna.html)
 
 + Imputacja metodą najbliższego sąsiada:
     + R: `simputation`, `VIM`
     + Python: `KNNImputer` z `sklearn.impute`
     + Zbiór danych na ćwiczenia [data4-czytelnictwo.csv](data/data4-czytelnictwo.csv)
-    + [Notatnik](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2025/refs/heads/main/codes/4-imputacja-nn.html)
+    + [Notatnik](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2026/refs/heads/main/codes/4-imputacja-nn.html)
     
 + Imputacja metodą predykcyjnego dopasowania średnich (ang. *predictive mean matching*)
   + R: `simputation`, `FNN`
   + Python: `sklearn.linear_model`, `sklearn.neighbors`
   + Zbiór danych na ćwiczenia [data4-czytelnictwo.csv](data/data4-czytelnictwo.csv)
-  + [Notatnik](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2025/refs/heads/main/codes/5-imputacja-pmm.html)
+  + [Notatnik](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2026/refs/heads/main/codes/5-imputacja-pmm.html)
 
 + Imputacja wielokrotna
   + R: [`mice`](https://github.com/amices/mice), [`rMIDAS`](https://cran.r-project.org/web/packages/rMIDAS/index.html)
   + Python: `IterativeImputer` (from `sklearn.impute`), [`MIDASpy`](https://github.com/MIDASverse/MIDASpy)
-  + [Notatnik](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2025/refs/heads/main/codes/6-imputacja-mi.html)
+  + [Notatnik](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2026/refs/heads/main/codes/6-imputacja-mi.html)
 
 + Imputacja regresyjna
+  + [Notatnik](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2026/refs/heads/main/codes/7-imputacja-reg.html)
 
-### 5. Kalibracja
+### 5. Case study
+
++ [opis](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2026/refs/heads/main/codes/8-case-study.html)
++ [zbior](./data/gospodarstwa-zajecia.xlsx)
+ 
+### 6. Kalibracja
 
 + Wstęp do kalibracji
   + R: `survey`, `sampling`, `laeken`
   + Python: [`samplics`](https://samplics-org.github.io/samplics/pages/weight_adj.html)
-  + [Notatnik](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2025/refs/heads/main/codes/7-kalibracja-wstep.html)
+  + [Notatnik](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2026/refs/heads/main/codes/9-kalibracja-wstep.html)
   + Dane na zajęcia [data5-kalibracja.csv](data/data5-kalibracja.csv)
 
 + Kalibracja (bardziej zaawansowana)
   + R: `survey`
   + Python: [`samplics`](https://samplics-org.github.io/samplics/pages/weight_adj.html)
-  + [Notatnik](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2025/refs/heads/main/codes/8-kalibracja-case-study.html)
+  + [Notatnik](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DepartmentOfStatisticsPUE/adn-2026/refs/heads/main/codes/10-kalibracja-case-study.html)
   + Dane na zajęcia [gospodarstwa-zajecia.xlsx](data/gospodarstwa-zajecia.xlsx)
   
 
-### 6. Ważenie przez odwrotność prawdopodobieństwa odpowiedzi
+### 7. Ważenie przez odwrotność prawdopodobieństwa odpowiedzi
 
 + PSW
   + R: `stats`, `glmnet`
@@ -90,7 +96,7 @@
   + Dane na zajęcia [gospodarstwa-zajecia.xlsx](data/gospodarstwa-zajecia.xlsx)
   
 
-### 7. Estymacja wariancji
+### 8. Estymacja wariancji
 
 + R: `boot`
 + Python: TBA
